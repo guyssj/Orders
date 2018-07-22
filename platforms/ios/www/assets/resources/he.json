@@ -1,0 +1,26 @@
+{
+    "OrderID":"מס׳ הזמנה",
+    "User":"סוכן",
+    "Date":"תאריך",
+    "Customer":"לקוח",
+    "ProfileName":"איש קשר",
+    "Collection":"הגבייה",
+    "PhoneNumber":"מ.פלאפון",
+    "CollectionType":"סוג הגבייה",
+    "RequireDate":"תאריך הגעה",
+    "Orders":"הזמנות",
+    "ProductName":"שם הפריט",
+    "Quantity":"כמות",
+    "Price":"מחיר",
+    "UnitPrice":"מחיר ליחידה",
+    "NoteOrder":"הערה",
+    "ProductDsec":"תיאור",
+    "Addcart":"הוסף לסל",
+    "ClearCart":"נקה סל",
+    "Cart":"סל הקניות",
+    "EmptyCart":"סל ריק",
+    "Items":"פריטים",
+    "Categorie":"קטגוריה",
+    "HomePage":"מסף בית"
+
+}

@@ -1,0 +1,45 @@
+page-login {
+
+    .imglogo{
+        width:100px; 
+        height:100px;
+        margin-right: 35%;
+    }
+
+    .backgroundpage {
+        background-color:#e9ecef;
+    };
+
+    ion-card.card{
+        height: 95%;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+    ion-card-header.card-header{
+        display: block;
+        font-size: 30px;
+        color: #333333;
+        line-height: 1.2;
+        text-align: center;
+    }
+    a,p
+    .list > .item-block:first-child{
+        border: medium none;
+    }
+    .item {
+        margin-bottom: 30px;
+        border: medium none;
+        background:rgba(16, 45, 100, 0.671);
+        border-radius: 5px;
+
+        .text-input{
+            color: #ffffff
+        }
+    }
+}

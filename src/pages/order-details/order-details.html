@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>orderDetails</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="">
+      </ion-avatar>
+      <h2>{{Localres?.Customer}} - {{Order?.CompanyName}}</h2>
+      <p>{{Order?.OrderDate | date:'dd/MM/yyyy'}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-note item-end>
+        {{Order?.ProfileName}}
+      </ion-note>
+      {{Localres?.ProfileName}}:
+    </ion-item>
+    <ion-item>
+      <ion-note item-end>
+        {{Order?.Cellphone}}
+      </ion-note>
+      {{Localres?.PhoneNumber}}:
+    </ion-item>
+    <ion-item>
+      <ion-note item-end>
+        {{Order?.CollectionTypeName}}
+      </ion-note>
+      {{Localres?.CollectionType}}:
+    </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-list-header>
+        {{Localres?.Items}}
+      </ion-list-header>
+      <ion-item *ngFor="let item of Items">
+        <h2>{{item.ProductName}}</h2>
+        <p>כמות :{{item.Quantity}}</p>
+        <p>{{item.Price | currency: "&#8362;"}}</p>
+      </ion-item>
+    </ion-list>
+</ion-content>

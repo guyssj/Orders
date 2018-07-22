@@ -11,12 +11,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TouchID } from '@ionic-native/touch-id';
 import { ApiDataProvider } from '../providers/api-data/api-data';
+import { OrderDetailsPage } from '../pages/order-details/order-details';
+import { LoginPage } from '../pages/login/login'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    OrderDetailsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -27,13 +31,15 @@ import { ApiDataProvider } from '../providers/api-data/api-data';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    OrderDetailsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    TouchID,
     ApiDataProvider,
+    TouchID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     
   ]

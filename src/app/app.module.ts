@@ -13,6 +13,11 @@ import { TouchID } from '@ionic-native/touch-id';
 import { ApiDataProvider } from '../providers/api-data/api-data';
 import { OrderDetailsPage } from '../pages/order-details/order-details';
 import { LoginPage } from '../pages/login/login'
+import { firebaseConfig } from '../environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CustomerDetailPage } from '../pages/customer-detail/customer-detail';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +25,15 @@ import { LoginPage } from '../pages/login/login'
     HomePage,
     ListPage,
     OrderDetailsPage,
-    LoginPage
+    LoginPage,
+    CustomerDetailPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +41,8 @@ import { LoginPage } from '../pages/login/login'
     HomePage,
     ListPage,
     OrderDetailsPage,
-    LoginPage
+    LoginPage,
+    CustomerDetailPage
   ],
   providers: [
     StatusBar,

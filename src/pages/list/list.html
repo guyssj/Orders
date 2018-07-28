@@ -1,33 +1,23 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="mycolor">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>{{Localres?.Customers}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="background-color: #e9ecef">
   <ion-list>
     <ion-item-sliding *ngFor="let item of Customers">
-      <ion-item>
-          <ion-icon name="contact"></ion-icon>
-        <h1 (click)="test()">{{item.firstlast}}</h1>
+      <ion-item (click)="openModal(item)">
+          <ion-icon name="contact" item-start></ion-icon>
+        <h2>{{item.CompanyName}}</h2>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button ion-button color="secondary">
           <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
-      <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="mail"></ion-icon>
-          Email
+          Text
         </button>
       </ion-item-options>
     </ion-item-sliding>

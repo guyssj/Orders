@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { ApiDataProvider } from '../../providers/api-data/api-data';
 import { Order } from '../../app/Order';
 import { OrderDetailsPage } from '../order-details/order-details';
@@ -9,24 +9,28 @@ import { OrderDetailsPage } from '../order-details/order-details';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  Orders:Order[] = [];
-  Localres:any;
-  constructor(public navCtrl: NavController , private myService:ApiDataProvider) {
-    this.getAllOrders();
+  Orders: Order[] = [];
+  Localres: any;
+  filterd: Order[] = [];
+  constructor(private menu: MenuController, public navCtrl: NavController, private myService: ApiDataProvider) {
+    this.menu.swipeEnable(true);
     this.myService.getLocalResoruce("he").subscribe(datalocal => {
-      debugger;
       this.Localres = datalocal;
     })
   }
 
-  goToDetails(id){
+  ionViewDidLoad() {
+    this.filterd = this.getAllOrders();
+  }
+
+  goToDetails(id) {
     console.log(id);
-    this.navCtrl.push(OrderDetailsPage,{
-      id : id
+    this.navCtrl.push(OrderDetailsPage, {
+      id: id
     });
   };
 
-  doRefresh(event){
+  doRefresh(event) {
     console.log('Begin async operation', event);
     this.getAllOrders();
 
@@ -36,15 +40,28 @@ export class HomePage {
     }, 2000);
   };
 
-  getAllOrders(){
+  getAllOrders() {
     this.myService.GetAllOrders().subscribe(data => {
-      console.log(data);
-      debugger;
       this.Orders = data;
       for (var i = 0; i < this.Orders.length; i++) {
         this.Orders[i].OrderDate = new Date(this.Orders[i].OrderDate.replace(/-/g, "/"));
         //this.Orders[i].OrderDate = this.Orders[i].OrderDate.getTime();
-    }
+      }
     });
+    return this.Orders;
+  }
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.filterd = this.getAllOrders();
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.filterd = this.Orders.filter((item) => {
+        return (item.CollectionTypeName.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 }

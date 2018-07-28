@@ -3,6 +3,7 @@
     "User":"סוכן",
     "Date":"תאריך",
     "Customer":"לקוח",
+    "Customers":"לקוחות",
     "ProfileName":"איש קשר",
     "Collection":"הגבייה",
     "PhoneNumber":"מ.פלאפון",
@@ -21,6 +22,9 @@
     "EmptyCart":"סל ריק",
     "Items":"פריטים",
     "Categorie":"קטגוריה",
-    "HomePage":"מסף בית"
+    "HomePage":"מסף בית",
+    "EmailAddress":"איימיל",
+    "Address":"כתובת",
+    "Cancel":"ביטול"
 
 }

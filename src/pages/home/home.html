@@ -14,9 +14,9 @@
         pullingText="Pull to refresh"
         refreshingText="Refreshing...">></ion-refresher-content>
       </ion-refresher>
-    
+        <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
       <ion-list>
-          <ion-item (click)="goToDetails(order.OrderID)" *ngFor="let order of Orders">
+          <ion-item (click)="goToDetails(order.OrderID)" *ngFor="let order of filterd">
             <ion-avatar item-start>
               <img src="assets/imgs/reps.png">
             </ion-avatar>
